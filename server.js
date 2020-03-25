@@ -12,6 +12,7 @@ const expressSession = require("express-session");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const MongoClient = require("mongodb").MongoClient;
+
 const uuidv1 = require("uuid/v1"); // executer uuidv1() pour avoir un uuid
 const connectMongo = require("connect-mongo");
 const app = express();
@@ -34,7 +35,7 @@ var sessionlife = 60 * 60 * 1000;
 
 const options = {
     store: new MongoStore({
-        url: "mongodb://localhost:27017/jeu_mj"
+        url: "mongodb+srv://admin:Sergio94!@cluster0-eunil.mongodb.net/test?retryWrites=true&w=majority"
     }),
     secret: "1234Secret",
     saveUninitialized: true,
@@ -50,9 +51,9 @@ const options = {
 // Definition de la variable questions
 
 var questions;
+const uri= "mongodb+srv://admin:Sergio94!@cluster0-eunil.mongodb.net/test?retryWrites=true&w=majority"
 
-MongoClient.connect("mongodb://localhost:27017", { useUnifiedTopology: true }, function (err, client) {
-    console.log("MONGOCLIENT")
+MongoClient.connect(uri, { useUnifiedTopology: true }, function (err, client) {
     if (err) {
         console.log("Cannot connect to database");
     } else {
@@ -72,7 +73,7 @@ MongoClient.connect("mongodb://localhost:27017", { useUnifiedTopology: true }, f
 
 var user;
 
-MongoClient.connect("mongodb://localhost:27017", { useUnifiedTopology: true }, function (err, client) {
+MongoClient.connect(uri, { useUnifiedTopology: true }, function (err, client) {
     if (err) {
         console.log("error");
     } else {
@@ -131,12 +132,12 @@ app.get("/home", function (req, res) {
 //Verification si l'utilisateur a toujours sa session active
 
 app.get("/", function (req, res) {
-
     // console.log('session==>', req.cookies)
     if (req.cookies) {
-        MongoClient.connect("mongodb://localhost:27017", {
+        MongoClient.connect(uri, {
             useUnifiedTopology: true
         }, function (err, client) {
+
             let dbase = client.db("jeu_mj");
             let collect = dbase.collection("sessions");
             console.log(req.session.userName);
@@ -157,7 +158,8 @@ app.get("/", function (req, res) {
 /***********INSCRIPTION avec verification si le pseudo est déjà utilisé ************/
 
 app.post("/inscription", function (req, res) {
-    MongoClient.connect("mongodb://localhost:27017", { useUnifiedTopology: true }, function (err, client) {
+    MongoClient.connect(uri, { useUnifiedTopology: true }, function (err, client) {
+        
         let db= client.db("jeu_mj");
         let collection = db.collection("utilisateurs")
         if (err) {
@@ -213,7 +215,7 @@ app.post("/inscription", function (req, res) {
 
 
 app.post("/connexion", function (req, res) {
-    MongoClient.connect("mongodb://localhost:27017", { useUnifiedTopology: true }, function (err, client) {
+    MongoClient.connect(uri, { useUnifiedTopology: true }, function (err, client) {
         if (err) {
             console.log("erreur")
         }
@@ -258,7 +260,7 @@ app.post("/connexion", function (req, res) {
 /**** Acces à la page room qui va également afficher les dix meilleurs scores enregistrés sur la DB  ****/
 
 app.get("/room", function (req, res) {
-    MongoClient.connect("mongodb://localhost:27017", { useUnifiedTopology: true }, function (err, client) {
+    MongoClient.connect(uri, { useUnifiedTopology: true }, function (err, client) {
         if (err) {
             console.log("erreur avec mongo")
         } else {
@@ -328,9 +330,11 @@ webSocketServer.on("connect", function (socket) {
         console.log(uuidPlayer);
         console.log(socket.id)
 
-
-        // var permettant d'aller chercher le pseudo correspondant à l'uuid reçu
-
+        // const client = new MongoClient(uri);
+        // // var permettant d'aller chercher le pseudo correspondant à l'uuid reçu
+        // let db = client.db("jeu_mj");
+        // let collection = db.collection("utilisateurs");
+        // var pseudo = collection
         var pseudo = user.find(joueur => joueur.uuid === uuidPlayer).pseudo
         console.log(pseudo)
 
@@ -450,7 +454,8 @@ webSocketServer.on("connect", function (socket) {
 
 
     socket.on("deconnexion", function(room){
-        MongoClient.connect("mongodb://localhost:27017", { useUnifiedTopology: true }, function (err, client){
+        const client = new MongoClient(uri);
+        MongoClient.connect(uri, { useUnifiedTopology: true }, function (err, client){
                     if(err){
                         console.log("erreur")
                     }else{
