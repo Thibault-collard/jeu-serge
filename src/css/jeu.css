@@ -1,0 +1,333 @@
+body {
+    background-image: url(../images/fond.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* header */
+
+h1 {    
+    color: black;
+    text-align: center;
+    margin-block-start: 0;
+    font-size: 2.8em;
+}
+
+/* section */
+
+p {
+    font-family: 'Comic Sans MS',serif;
+    font-size: 1.4em;
+}
+
+#instructions{
+    border: 2px solid;
+    color: white;
+    text-align: center;
+}
+
+#formInscription label {
+    font-size: 30px;
+    color: white;
+}
+
+#formConnexion label {
+    font-size: 30px;
+    color: white;
+}
+
+#inscription{
+    width: 200px;
+    height: 200px;
+    border-radius: 125px;
+    font-family: "Comic Sans MS", serif;
+    font-size: 1.5em;
+    color: white;
+    background-color: rgb(85, 0, 0);
+    position: absolute;
+    right: 0;
+    left: 250px;
+    top: 490px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+}
+
+#connexion{
+    width: 200px;
+    height: 200px;
+    border-radius: 125px;
+    font-family: "Comic Sans MS", serif;
+    font-size: 1.5em;
+    color: white;
+    background-color: rgb(85, 0, 0);
+    position: absolute;
+    right: 250px;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 490px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#formInscription, #formConnexion{
+    position: absolute;
+    height: 300px;
+    width: 200px;
+    border: 1rem solid rgb(8, 28, 58);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 200px;
+    right: 0;
+    left:0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+#formChoixDesRooms{
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    font-family: 'Comic Sans MS',serif;
+    font-size: 1.1em;
+    color: yellowgreen;
+}
+
+#affichageScore{
+    border: 2px solid;
+    text-align: center;
+    color: white;
+    margin-top: 50px;
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#formulaire {
+    text-align: center;
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#joueurs{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+#fenetreDeJeu {
+    font-family: 'Comic Sans MS',serif;
+    color: whitesmoke;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 1200px;
+    border: 2px solid black;
+    height: 700px;
+    position: relative;
+}
+
+#numQuestion {
+    width: 200px;
+    height: 25px;
+    border: 2px solid green;
+    border-radius: 10px;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#theme {
+    width: 350px;
+    height: 28px;
+    border: 2px solid green;
+    border-radius: 10px;
+    font-size: 22px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#question {
+    width: 1150px;
+    height: 50px;
+    /* border: 2px solid green; */
+    border-radius: 10px;
+    font-size: 2.1em;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+#reponseA {
+    width: 500px;
+    height: 60px;
+    border : 2px solid greenyellow;
+    border-radius: 50px;
+    font-size: 40px;
+    margin-top: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#reponseB {
+    width: 500px;
+    height: 60px;
+    border : 2px solid greenyellow;
+    border-radius: 50px;
+    font-size: 40px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#reponseC {
+    width: 500px;
+    height: 60px;
+    border : 2px solid greenyellow;
+    border-radius: 50px;
+    font-size: 40px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#reponseD {
+    width: 500px;
+    height: 60px;
+    border : 2px solid greenyellow;
+    border-radius: 50px;
+    font-size: 40px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;   
+}
+
+#allpropositions{
+    display: flex;
+    flex-direction: column;
+}
+
+#allpropositions button {
+    background-color: unset;
+    color: white;
+}
+
+#reponseFinale {
+    width: 500px;
+    height: 60px;
+    border : 2px solid rgb(47, 206, 255);
+    border-radius: 50px;
+    font-size: 40px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;  
+}
+
+#anecdote {
+    width: 1100px;
+    height: 50px;
+    /* border: 2px solid blue; */
+    border-radius: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 25px;
+    text-align: center;
+}
+
+#allForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+#startGame{
+    margin-top: 20px;
+}
+
+#startGame label{
+    color: white;
+    display: block;
+    text-align: center;
+}
+
+#boutonRejoindre{
+    height: 75px;
+    width: 75px;
+    border-radius: 40px;
+    border: 2px solid black;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    top: 420px;
+}
+
+#bouttonStart{
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+#titreForm {
+    text-align: center;
+    color: aliceblue;
+}
+
+#scoreJ1{
+    font-family: "Comic Sans MS", serif;
+}
+
+#scoreJ2{
+    font-family: "Comic Sans MS", serif;
+}
+/* Images */
+
+form img {
+    height: 50px;
+    width: 50px;
+}
+
+#avatar {
+    color: aliceblue;
+    font-size: large;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left:auto;
+    margin-right: auto;
+    width: max-content;
+}
+
+#avatarfinalJ1 {
+    height: 50px;
+    width: 50px;
+}
+
+#avatarfinalJ2 {
+    height: 50px;
+    width: 50px;
+}

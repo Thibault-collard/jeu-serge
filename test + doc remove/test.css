@@ -1,0 +1,58 @@
+body {
+    background-image: url(../src/images/fond.png);
+}
+
+#inscription{
+    width: 200px;
+    height: 200px;
+    border-radius: 125px;
+    font-family: "Comic Sans MS", serif;
+    font-size: 1.5em;
+    color: white;
+    background-color: rgb(85, 0, 0);
+    position: absolute;
+    right: 0;
+    left: 250px;
+    top: 470px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+}
+
+#connexion{
+    width: 200px;
+    height: 200px;
+    border-radius: 125px;
+    font-family: "Comic Sans MS", serif;
+    font-size: 1.5em;
+    color: white;
+    background-color: rgb(85, 0, 0);
+    position: absolute;
+    right: 250px;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 470px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#formInscription, #formConnexion{
+    position: absolute;
+    height: 300px;
+    width: 200px;
+    border: 1rem solid rgb(8, 28, 58);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 200px;
+    right: 0;
+    left:0;
+    margin-left: auto;
+    margin-right: auto;
+}
+

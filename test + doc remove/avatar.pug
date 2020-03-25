@@ -1,0 +1,41 @@
+include includes/head.pug
+
+p=mess
+form#avatar(action='/avatar' method='POST')
+    label(for='choix') Choisissez votre avatar
+    br
+    input#avatar1(type='radio' name='image' value='/images/avatar1.png' checked='')
+    label(for='') Avatar 1
+    img(src='/images/avatar1.png' alt='')
+    input#avatar2(type='radio' name='image' value='/images/avatar2.png')
+    label(for='') Avatar 2
+    img(src='/images/avatar2.png' alt='')
+    input#avatar3(type='radio' name='image' value='/images/avatar3.png')
+    label(for='') Avatar 3
+    img(src='/images/avatar3.png' alt='')
+    input#avatar4(type='radio' name='image' value='/images/avatar4.png')
+    label(for='') Avatar 4
+    img(src='/images/avatar4.png' alt='')
+    input#avatar5(type='radio' name='image' value='/images/avatar5.png')
+    label(for='') Avatar 5
+    img(src='/images/avatar5.png' alt='')
+    input#avatar6(type='radio' name='image' value='/images/avatar6.png')
+    label(for='') Avatar 6
+    img(src='/images/avatar6.png' alt='')
+    input#avatar7(type='radio' name='image' value='/images/avatar7.png')
+    label(for='') Avatar 7
+    img(src='/images/avatar7.png' alt='')
+    input#avatar8(type='radio' name='image' value='/images/avatar8.png')
+    label(for='') Avatar 8
+    img(src='/images/avatar8.png' alt='')
+    input#avatar9(type='radio' name='image' value='/images/avatar9.png')
+    label(for='') Avatar 9
+    img(src='/images/avatar9.png' alt='')
+    input#avatar10(type='radio' name='image' value='/images/avatar10.png')
+    label(for='') Avatar 10
+    img(src='/images/avatar10.png' alt='')
+    br
+    input(type='submit' value='Valider')
+
+//- script(src="back.js")
+include includes/footer.pug

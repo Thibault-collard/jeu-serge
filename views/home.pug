@@ -1,0 +1,70 @@
+include includes/head.pug
+
+#instructions
+  p
+    |Bienvenue dans ce Quiz
+  p
+    | Vous avez plusieurs parties disponibles pour jouer.
+    br
+    | Chaque partie se joue en un contre un. Si vous &ecirc;tes le premier arriver vous devrait attendre la deuxi&egrave;me
+    | personne pour commencer la partie.
+    br
+    | C&apos;est la deuxi&egrave;me personne qui pourra lancer la partie. Cette derni&egrave;re comporte 25 questions et vous avez un
+    | temps imparti pour y r&eacute;pondre.
+    br
+    | Chaque question rapporte un point et la personne qui a le plus de point remporte la partie.
+  p
+    | Bon jeu !!
+    br
+    | (Un ajout de question se fera prochainement !)
+    
+#inscription INSCRIPTION
+
+#connexion CONNEXION
+
+#formInscription
+  form(action='/inscription' method='POST')
+    label(for='name') Nom
+    br
+    input#idInscription(type='text' name='identifiant')
+    br
+    label(for='mdp') Mot de passe
+    br
+    input(type='password' name='mdp')
+    br
+    input(type='submit' value='Valider')
+
+    p= message
+
+
+#formConnexion
+  form(action='/connexion' method='POST')
+    label(for='name') Nom
+    br
+    input#idConnexion(type='text' name='identifiant')
+    br
+    label(for='mdp') Mot de passe
+    br
+    input(type='password' name='mdp')
+    br
+    input(type='submit' value='Valider')
+
+    p= message
+
+//- form#formulaire(action='/auth' method='post')
+//-     fieldset#bordure
+//-         label(for='name') Nom
+//-         br 
+//-         input#nameJ1(type='text' name='identifiant')
+//-         br
+//-         label(for='mdp') Mot de passe
+//-         br
+//-         input#mdp(type='password' name= 'mdp')
+//-         br
+//-         input(type='submit' value='Jouer')
+//- p= message
+
+
+script(src="/js/backHome.js")
+//- script(src="/js/back.js")
+include includes/footer.pug

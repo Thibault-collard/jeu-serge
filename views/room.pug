@@ -1,0 +1,62 @@
+include includes/head.pug
+
+div#beforePartie
+  
+
+  p#titreForm Choissisez votre Partie 
+  div#allForm
+    
+    form(action="/game" method="POST" name="Partie-1")
+      //- label(for='partie1')  Partie 1 
+      input#partieUne(type='submit' value='Partie-1')
+    form(action="/game" method="POST" name="Partie-2")
+      //- label(for='partie2')  Partie 2 
+      input#partieDeux(type='submit' value='Partie-2')
+    form(action="/game" method="POST" name="Partie-3")
+      //- label(for='partie3')  Partie 3 
+      input#partieTrois(type='submit' value='Partie-3')
+
+
+  #affichageScore
+    h2 Les 10 meilleurs scores
+    each score in gameur
+      div= "Pseudo: "+score.pseudo+" "+"  Score: "+ score.score+"/25"
+
+div#joueurs
+  div#joueur1
+    p
+      span#nameJ1
+    img#avatarfinalJ1(src="../images/avatar1.png" alt='img1')
+    p Score : 
+      span#score1 
+  div#joueur2
+    p
+      span#nameJ2
+    img#avatarfinalJ2(src="../images/avatar10.png" alt='img2')
+    p Score : 
+      span#score2 
+
+input#bouttonStart(type="button" value="Jouer") 
+
+#message
+
+
+
+
+section
+  #fenetreDeJeu
+    #numQuestion
+    #theme
+    #question
+    div#allpropositions
+      button#reponseA
+      button#reponseB
+      button#reponseC
+      button#reponseD 
+    #reponseFinale
+    #anecdote
+
+
+
+include includes/footer.pug
+//- script(src="/js/back.js")
